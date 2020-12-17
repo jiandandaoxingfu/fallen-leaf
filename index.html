@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8"/>
+		<title>threejs</title>
+		<script type="text/javascript" src="three.js"></script>
+		<script type="text/javascript" src="leaf.js"></script>
+
+	</head>
+	<style>
+		* {
+			margin: 0;
+			padding: 0;
+			overflow: hidden;
+		}
+		#hidden {
+			display: none;
+		}
+
+		body {
+    		margin: 0;
+    		overflow: hidden;
+    		background: url("银杏树.jpg") center no-repeat;
+    		background-size:cover;
+		}
+	</style>
+	<body>
+		<div id='main'></div>
+		<div id='hidden'></div>
+		<script type="text/javascript">
+			// 场景
+			var scene = new THREE.Scene();
+			
+			// 透视相机，更符合现实： 视角， 场景长宽比， 渲染始末距离相机的位置
+			var camera = new THREE.PerspectiveCamera(45, window.innerWidth/window.innerHeight, 0.1, 10000);
+
+			// 渲染器
+			var renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
+			renderer.setClearAlpha(0.2);
+			renderer.setSize(window.innerWidth, window.innerHeight);
+		</script>
+
+
+		<script type="text/javascript" src='15-leaf.js'></script>
+		
+		<script type="text/javascript">
+			document.getElementById('main').appendChild(renderer.domElement);
+			renderer.render(scene, camera);
+		</script>
+	</body>
+</html>
