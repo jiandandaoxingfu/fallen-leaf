@@ -30,7 +30,7 @@ const HEIGHT = window.innerHeight;
 	leaf.speed = Math.random() * (max_speed - min_speed) + min_speed;
 	scene.add(leaf);
 	leafs.push(leaf);
-	for(let i=0; i<500; i++) {
+	for(let i=0; i<100; i++) {
 		let leaf2 = leaf.clone();
 		leaf2.position.x = 3 * WIDTH * (1/2 - Math.random() );
 		leaf2.position.y = 3 * HEIGHT / 2 + Math.random() * HEIGHT / 3 ;
