@@ -3,7 +3,7 @@
 * @Email:              jiaminxin@outlook.com
 * @Date:               2020-12-16 20:43:19
 * @Last Modified by:   Administrator
-* @Last Modified time: 2020-12-17 21:11:04
+* @Last Modified time: 2020-12-18 09:32:38
 */
 
 
@@ -30,11 +30,11 @@ const HEIGHT = window.innerHeight;
 	leaf.speed = Math.random() * (max_speed - min_speed) + min_speed;
 	scene.add(leaf);
 	leafs.push(leaf);
-	for(let i=0; i<50; i++) {
+	for(let i=0; i<500; i++) {
 		let leaf2 = leaf.clone();
 		leaf2.position.x = 3 * WIDTH * (1/2 - Math.random() );
 		leaf2.position.y = 3 * HEIGHT / 2 + Math.random() * HEIGHT / 3 ;
-		leaf2.position.z = 3 * HEIGHT * (0.8 - Math.random() ) + HEIGHT / 3;
+		leaf2.position.z = 10 * HEIGHT * (0.5 - Math.random() ) + HEIGHT;
 		leaf2.rotation.x = Math.PI * (1/2 - Math.random() );
 		leaf2.rotation.y = Math.PI * (1/2 - Math.random() );
 		leaf2.rotation.z = Math.PI * (1/2 - Math.random() );
@@ -49,10 +49,10 @@ camera.position.set(0, 0, 3 * HEIGHT);
 (function animate() {
 	leafs.map( leaf => {
 		leaf.position.y -= leaf.speed;
-		if( leaf.position.y < -1.7 * HEIGHT / 2 ) {
+		if( leaf.position.y < - 1.25 * HEIGHT ) {
 			leaf.position.x = 3 * WIDTH * (1/2 - Math.random() );
 			leaf.position.y = 3 * HEIGHT / 1.6;
-			leaf.position.z = 3 * HEIGHT * (0.5 - Math.random() ) + HEIGHT / 3;
+			leaf.position.z = 10 * HEIGHT * (0.5 - Math.random() ) + HEIGHT;
 		}
 		leaf.rotation.x += Math.PI / 200 * Math.random();
 		leaf.rotation.y += Math.PI / 600 * Math.random();
